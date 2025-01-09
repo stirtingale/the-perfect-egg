@@ -607,6 +607,103 @@
             overflow-y: auto;
         }
 
+        /* Overlay styles */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .popup h1,
+        .popup h2,
+        .popup h3 {
+            font-size: 1.35rem;
+            color: black;
+            margin: 0.9em 0;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Show class for popups and overlays */
+        .show {
+            display: block;
+        }
+
+        /* Button styles */
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .accept-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .decline-button {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .utility-button {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        /* Form styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input[type="email"] {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Main content styles */
+        .recipe-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
         /* ==========================================================================
         6. Utilities and Animations
         ========================================================================== */
@@ -1551,56 +1648,39 @@
         </footer>
     </div>
 
-    <!-- Add this HTML just before the closing body tag -->
-    <div class="cookie-overlay" id="cookieOverlay"></div>
-    <div id="cookieConsent" class="cookie-consent">
-        <div class="cookie-content">
-            <div>
-                <h3>🍪 Cookie Settings</h3>
-                <p>We use cookies to enhance your egg-boiling experience and analyze our egg traffic. These cookies help
-                    us
-                    understand how visitors interact with our website, improve our egg-related services, and ensure you
-                    get
-                    the most perfectly boiled eggs possible.</p>
-                <p>We value your privacy as much as we value properly centered yolks. Please select your cookie
-                    preferences
-                    below.</p>
-            </div>
-            <div class="cookie-buttons">
-                <button id="acceptCookies" class="button success">Accept All Cookies</button>
-                <button id="rejectCookies" class="button secondary">Essential Only</button>
-            </div>
-        </div>
+    <!-- Cookie consent popup -->
+    <div id="cookieOverlay" class="overlay"></div>
+    <div id="cookieConsent" class="popup">
+        <h3>🍪 Cookie Notice</h3>
+        <p>We use cookies to enhance your egg-cooking experience. Accept cookies to unlock egg mastery!</p>
+        <button id="acceptCookies" class="accept-button">Accept All Cookies</button>
+        <button id="rejectCookies" class="decline-button">Reject (But Why?)</button>
     </div>
 
-    <!-- Add this HTML after your cookie consent popup -->
-    <div class="newsletter-overlay" id="newsletterOverlay"></div>
-    <div id="newsletterPopup" class="newsletter-popup">
-        <div class="newsletter-content">
-            <div class="newsletter-header">
-                <h2>🥚 WAIT! Don't miss out on egg-citing updates!</h2>
-                <p class="subheading">Join 147,283 egg enthusiasts who receive my life-changing egg content!</p>
-            </div>
+    <!-- Newsletter popup -->
+    <div id="newsletterOverlay" class="overlay"></div>
+    <div id="newsletterPopup" class="popup">
+        <h3>🥚 Egg-citing News!</h3>
+        <p>Subscribe for daily egg tips and tricks!</p>
+        <h2>🥚 WAIT! Don't miss out on egg-citing updates!</h2>
+        <p class="subheading">Join 147,283 egg enthusiasts who receive my life-changing egg content!</p>
+        <p>Sign up now and receive my FREE guide:</p>
+        <h3>"7 SHOCKING Egg-Boiling Secrets They Don't Want You To Know!"</h3>
+        <p class="bonus-text">BONUS: First 100 subscribers today get my exclusive "Egg Timer Meditation Guide"
+            ($97
+            value!)</p>
 
-            <div class="newsletter-body">
-                <p>Sign up now and receive my FREE guide:</p>
-                <h3>"7 SHOCKING Egg-Boiling Secrets They Don't Want You To Know!"</h3>
-                <p class="bonus-text">BONUS: First 100 subscribers today get my exclusive "Egg Timer Meditation Guide"
-                    ($97
-                    value!)</p>
-
-                <form id="newsletterForm" class="newsletter-form">
-                    <input type="email" placeholder="Enter your best email address..." required>
-                    <button type="submit" class="button large success">YES! I WANT PERFECT EGGS! 🥚</button>
-                    <button type="button" class="button small secondary decline-button">No thanks, I prefer rubbery egg
-                        whites</button>
-                </form>
-            </div>
-        </div>
+        <form id="newsletterForm">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="accept-button">Subscribe Now!</button>
+            <button type="button" class="decline-button">No thanks, I like mediocre eggs</button>
+        </form>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            console.log("🥚");
+
             const cookieConsent = document.getElementById('cookieConsent');
             const cookieOverlay = document.getElementById('cookieOverlay');
             const newsletterPopup = document.getElementById('newsletterPopup');
@@ -1630,6 +1710,12 @@
                     // Reset click count when newsletter appears
                     globalClickCount = 0;
                 }, 750);
+            });
+
+            // Handle cookie reject
+            rejectBtn.addEventListener('click', () => {
+                cookieConsent.classList.remove('show');
+                cookieOverlay.classList.remove('show');
             });
 
             // Handle newsletter form submission
@@ -1668,13 +1754,9 @@
                     }
                 }
             });
-
-
-
         });
 
         function scrollToRecipe() {
-            // Scroll to recipe section - you'll need to add the correct ID
             document.getElementById('recipe').scrollIntoView({
                 behavior: 'smooth'
             });
@@ -1692,7 +1774,6 @@
             window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
         }
     </script>
-
 </body>
 
 </html>

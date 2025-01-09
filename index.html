@@ -205,9 +205,6 @@
             padding: 0 1.8em;
         }
 
-        img {
-            margin: 1.8em 0;
-        }
 
         svg {
             width: 100%;
@@ -219,6 +216,25 @@
             margin: 0;
             width: 1.8em;
             fill: white;
+        }
+
+        .flex-image {
+            margin: 1.8em 0;
+            position: relative;
+            height: 0px;
+            padding-bottom: 57.5%;
+            width: 100%;
+            background-color: #e9e9e9;
+            overflow: hidden;
+        }
+
+        .flex-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* ==========================================================================
@@ -1090,8 +1106,11 @@
                         possibly the entire
                         trajectory of egg consumption in rural Vermont.</p>
 
-                    <img src="1.webp"
-                        alt="Hard-boiled eggs sliced lengthwise showing firm yellow centers, arranged on wooden cutting board with fresh herbs">
+                    <div class="flex-image" style="padding-bottom:133.384615%">
+                        <img src="1.webp"
+                            alt="Hard-boiled eggs sliced lengthwise showing firm yellow centers, arranged on wooden cutting board with fresh herbs"
+                            width="650" height="867">
+                    </div>
 
                     <p>Picture it: <a href="https://amzn.to/4haHC2f" target="_blank">Vermont, 1947</a>. A young Mildred,
                         barely seventeen, standing in her mother's kitchen,
@@ -1288,8 +1307,11 @@
                         upcoming documentary <a href="https://amzn.to/40dRkKD" target="_blank">"Shell Shocked: The Truth
                             About Big Egg"</a>).</p>
 
-                    <img src="2.webp"
-                        alt="Step-by-step process showing eggs being lowered into boiling water with slotted spoon">
+                    <div class="flex-image" style="padding-bottom:150%">
+                        <img src="2.webp"
+                            alt="Step-by-step process showing eggs being lowered into boiling water with slotted spoon"
+                            width="650" height="975">
+                    </div>
 
                     <p>My own journey with eggs began under her tutelage. I can still remember the first time she let me
                         handle her precious
@@ -1484,8 +1506,11 @@
                             <a href="https://amzn.to/3C11I09" target="_blank">chicken coop</a> in rural Vermont...
                         </p>
 
-                        <img src="3.webp"
-                            alt="Peeled six-minute egg with perfectly set white and liquid gold center running onto toast">
+                        <div class="flex-image" style="padding-bottom: 150%;">
+                            <img src="3.webp"
+                                alt="Peeled six-minute egg with perfectly set white and liquid gold center running onto toast"
+                                height="1125" width="750">
+                        </div>
 
                         <div class="review">
                             <div class="review-header">
@@ -1562,8 +1587,13 @@
                             <li>One-pot recipe</li>
                         </ul>
 
-                        <img src="4.webp"
-                            alt="Batch of precisely cooked 7-minute eggs peeled and ready for meal prep, showing consistent yellow centers">
+                        <img>
+
+                        <div class="flex-image" style="padding-bottom: 66.66%;">
+                            <img src="4.webp"
+                                alt="Batch of precisely cooked 7-minute eggs peeled and ready for meal prep, showing consistent yellow centers"
+                                height="500" width="750">
+                        </div>
 
                         <h5>Key Ingredients:</h5>
                         <ul>

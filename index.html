@@ -116,8 +116,10 @@
       }
     }
     </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" media="print"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css"
+        media="print" onload="this.media='all'">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
@@ -127,9 +129,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
     <style>
-        /* ==========================================================================
-        1. Settings - Variables and Config
-        ========================================================================== */
         :root {
             /* Colors */
             --color-primary: #0066cc;
@@ -164,9 +163,6 @@
             --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
-        /* ==========================================================================
-        2. Base Styles
-        ========================================================================== */
         body {
             font-family: "Open Sans", serif;
             font-optical-sizing: auto;
@@ -237,9 +233,6 @@
             object-fit: cover;
         }
 
-        /* ==========================================================================
-   3. Layout
-   ========================================================================== */
         .section-main {
             margin: var(--spacing-md) 0;
             padding: var(--spacing-xl) 0;
@@ -258,10 +251,6 @@
             padding: 0 1.8em;
         }
 
-        /* ==========================================================================
-        4. Components
-        ========================================================================== */
-        /* Recipe Components */
         .recipe-meta {
             background: var(--color-background);
             padding: var(--spacing-sm) 2.35em;
@@ -354,7 +343,6 @@
             margin: var(--spacing-lg) 0;
         }
 
-        /* Action Buttons */
         .recipe-actions {
             display: flex;
             gap: 10px;
@@ -376,7 +364,6 @@
             color: #fff;
         }
 
-        /* Button Variants */
         [class*="-btn"]:hover {
             transform: translateY(-2px);
         }
@@ -397,7 +384,6 @@
             background-color: var(--color-purple);
         }
 
-        /* Review System */
         .review-container {
             max-width: 800px;
             margin: var(--spacing-md) auto;
@@ -451,12 +437,10 @@
             color: var(--color-text);
         }
 
-        /* Review Variants */
         .not-helpful {
             background: #fff8f8;
         }
 
-        /* Review Animations */
         .review {
             transition: transform 0.2s ease;
         }
@@ -783,10 +767,6 @@
             display: block;
         }
 
-        /* ==========================================================================
-        5. Modals and Overlays
-        ========================================================================== */
-        /* Cookie Consent */
         .cookie-consent {
             position: fixed;
             top: 50%;
@@ -805,7 +785,6 @@
             overflow-y: auto;
         }
 
-        /* Newsletter Modal */
         .newsletter-popup {
             position: fixed;
             top: 50%;
@@ -824,7 +803,6 @@
             overflow-y: auto;
         }
 
-        /* Overlay styles */
         .overlay {
             display: none;
             position: fixed;
@@ -836,7 +814,6 @@
             z-index: 998;
         }
 
-        /* Popup styles */
         .popup {
             display: none;
             position: fixed;
@@ -862,12 +839,10 @@
             text-transform: uppercase;
         }
 
-        /* Show class for popups and overlays */
         .show {
             display: block;
         }
 
-        /* Button styles */
         button {
             padding: 8px 16px;
             margin: 5px;
@@ -895,7 +870,6 @@
             color: white;
         }
 
-        /* Form styles */
         form {
             display: flex;
             flex-direction: column;
@@ -908,7 +882,6 @@
             border-radius: 4px;
         }
 
-        /* Main content styles */
         .recipe-container {
             max-width: 800px;
             margin: 0 auto;
@@ -921,30 +894,21 @@
             margin: 20px 0;
         }
 
-        /* ==========================================================================
-        6. Utilities and Animations
-        ========================================================================== */
         li>a,
         p>a {
-            /* Base styling */
             color: #0066cc;
             text-decoration: none;
             padding: 0 2px;
             border-bottom: 2px solid #0066cc;
             font-weight: 500;
             transition: all 0.2s ease-in-out;
-
-            /* Make the clickable area larger */
             display: inline-block;
             line-height: 1.4;
-
-            /* Ensure good contrast for accessibility */
             position: relative;
             z-index: 1;
         }
 
         p>a:hover {
-            /* Hover effects */
             background-color: #0066cc15;
             border-bottom: 2px solid #003d7a;
             color: #003d7a;
@@ -952,18 +916,15 @@
         }
 
         p>a:active {
-            /* Click state */
             transform: translateY(1px);
         }
 
         p>a:focus {
-            /* Keyboard navigation focus */
             outline: 2px solid #0066cc;
             outline-offset: 2px;
             border-radius: 2px;
         }
 
-        /* Add a subtle icon to external links */
         p>a[href^="http"]:after {
             content: " ↗";
             font-size: 0.8em;
@@ -1005,9 +966,6 @@
             }
         }
 
-        /* ==========================================================================
-        7. Media Queries
-        ========================================================================== */
         @media (max-width: 800px) {
             .newsletter-popup {
                 padding: var(--spacing-md);
@@ -1038,22 +996,19 @@
             text-transform: uppercase;
             font-size: 0.725rem;
             letter-spacing: 0.2em;
-            color: #9a9a9d;
+            color: #484849;
         }
     </style>
 </head>
 
 <body>
     <div class="grid-container">
-        <!-- Hero Section -->
         <div class="hero-section text-center">
             <h1>The PERFECT Hard-Boiled<br class="desktop-only"> Eggs Recipe</h1>
             <span class="est">Est. 2025</span>
             <br>
             <p class="lead">A Five-Generation Legacy of Egg Excellence</p>
         </div>
-
-        <!-- Quick Links -->
         <div class="grid-x grid-margin-x quick-links">
             <div class="cell small-12">
                 <div class="recipe-actions">
@@ -1063,7 +1018,6 @@
                         </svg>
                         Jump to Recipe
                     </button>
-
                     <button onclick="printRecipe()" class="recipe-btn print-btn">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path
@@ -1071,7 +1025,6 @@
                         </svg>
                         Print Recipe
                     </button>
-
                     <button onclick="saveToPinterest()" class="recipe-btn pinterest-btn">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path
@@ -1090,7 +1043,6 @@
 
             </div>
         </div>
-
         <!-- Main Content -->
         <div class="grid-x grid-margin-x">
             <!-- Story Column -->
@@ -1573,7 +1525,7 @@
                                 <text x="25" y="23" font-family="Arial" font-size="14" fill="#fff">Mint Now!</text>
                             </g>
                         </svg>
-                        <h5>Why You'll LOVE This Recipe:</h5>
+                        <h4>Why You'll LOVE This Recipe:</h4>
                         <ul>
                             <li>It's literally just boiling eggs</li>
                             <li>Uses water (which you probably already have!)</li>
@@ -1587,15 +1539,13 @@
                             <li>One-pot recipe</li>
                         </ul>
 
-                        <img>
-
                         <div class="flex-image" style="padding-bottom: 66.66%;">
                             <img src="4.webp"
                                 alt="Batch of precisely cooked 7-minute eggs peeled and ready for meal prep, showing consistent yellow centers"
                                 height="500" width="750">
                         </div>
 
-                        <h5>Key Ingredients:</h5>
+                        <h4>Key Ingredients:</h4>
                         <ul>
                             <li>Eggs (fresh from the store or your local farmer's market!)</li>
                             <li>Water (filtered preferred, but tap water works too!)</li>

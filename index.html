@@ -182,6 +182,7 @@
         h3,
         h4,
         h5 {
+            line-height: 1.125;
             margin: var(--spacing-md) 0 var(--spacing-xs);
         }
 
@@ -199,7 +200,8 @@
         }
 
         p.lead {
-            font-size: 0.85rem;
+            font-size: 1rem;
+            font-weight: 600;
         }
 
         img {
@@ -233,6 +235,12 @@
             margin: var(--spacing-lg) 0;
         }
 
+        .hero-section h1 {
+            font-family: Georgia;
+            font-style: italic;
+            padding: 0 1.8em;
+        }
+
         /* ==========================================================================
         4. Components
         ========================================================================== */
@@ -241,6 +249,79 @@
             background: var(--color-background);
             padding: var(--spacing-sm) 2.35em;
             margin: var(--spacing-sm) 0;
+        }
+
+
+        .instructions-container {
+            margin-top: 1.8em;
+        }
+
+        .instruction-step {
+            margin-bottom: 0.9em;
+            padding-bottom: 0.9em;
+            border-bottom: 1px dashed #e9ecef;
+        }
+
+        .step-content {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .step-number {
+            font-size: 1.5rem;
+            color: #0066cc;
+            font-weight: 700;
+            min-width: 2rem;
+            text-align: center;
+            padding-top: 0.2rem;
+        }
+
+        .pro-tip,
+        .expert-tip,
+        .secret-tip {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-left: 4px solid #28a745;
+            border-radius: 0.25rem;
+        }
+
+        .waiting-activities {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .waiting-activities [role="listitem"] {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .waiting-activities [role="listitem"]::before {
+            content: "→";
+            position: absolute;
+            left: -1.5rem;
+            color: #0066cc;
+        }
+
+        .measurement,
+        .temperature {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .course-reference {
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .step-content {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .step-number {
+                text-align: left;
+            }
         }
 
         .recipe-meta ul,
@@ -566,6 +647,120 @@
             }
         }
 
+        .notification-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1020;
+            display: none;
+        }
+
+        .notification-popup {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 460px;
+            background: white;
+            z-index: 1021;
+            display: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+        }
+
+        .notification-content {
+            display: flex;
+            padding: 20px;
+            gap: 16px;
+            border-bottom: 1px solid #dadce0;
+        }
+
+        .notification-icon {
+            width: 24px;
+            height: 24px;
+            margin-top: 2px;
+        }
+
+        .notification-text {
+            flex: 1;
+        }
+
+        .notification-content h3 {
+            font-size: 14px;
+            margin: 0 0 4px 0;
+            font-weight: 500;
+            color: #202124;
+        }
+
+        .notification-content p {
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.4;
+            color: #5f6368;
+        }
+
+        .notification-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            padding: 16px 20px;
+        }
+
+        #denyNotifications {
+            padding: 8px 16px;
+            font-size: 13px;
+            color: #5f6368;
+            background: transparent;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #denyNotifications:hover {
+            background: #f2f2f2;
+        }
+
+        #allowNotifications {
+            padding: 8px 16px;
+            font-size: 13px;
+            color: #1a73e8;
+            background: transparent;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #allowNotifications:hover {
+            background: #f6fafe;
+        }
+
+        .notification-icon {
+            width: 24px;
+            height: 24px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .notification-overlay.show,
+        .notification-popup.show {
+            display: block;
+        }
+
         /* ==========================================================================
         5. Modals and Overlays
         ========================================================================== */
@@ -707,7 +902,7 @@
         /* ==========================================================================
         6. Utilities and Animations
         ========================================================================== */
-
+        li>a,
         p>a {
             /* Base styling */
             color: #0066cc;
@@ -812,6 +1007,17 @@
                 top: var(--spacing-md);
             }
         }
+
+        span.est {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin: 0.45em 0 0.9em;
+            text-transform: uppercase;
+            font-size: 0.725rem;
+            letter-spacing: 0.2em;
+            color: #9a9a9d;
+        }
     </style>
 </head>
 
@@ -819,7 +1025,9 @@
     <div class="grid-container">
         <!-- Hero Section -->
         <div class="hero-section text-center">
-            <h1>🥚 The PERFECT Hard-Boiled Eggs Recipe</h1>
+            <h1>The PERFECT Hard-Boiled<br> Eggs Recipe</h1>
+            <span class="est">Est. 2025</span>
+            <br>
             <p class="lead">A Five-Generation Legacy of Egg Excellence</p>
         </div>
 
@@ -882,7 +1090,8 @@
                     <p>Picture it: <a href="https://amzn.to/4haHC2f" target="_blank">Vermont, 1947</a>. A young Mildred,
                         barely seventeen, standing in her mother's kitchen,
                         watching steam rise
-                        from a cast-iron pot that had survived two world wars and three failed attempts at making her
+                        from a <a href="https://amzn.to/42bEC1t" target="_blank">cast-iron pot</a> that had survived two
+                        world wars and three failed attempts at making her
                         own sourdough starter.
                         This pot, now displayed in my custom-built egg shrine (tour available through my Patreon's
                         platinum tier), was where
@@ -953,8 +1162,8 @@
                         code YOLKYLIFE for 5%
                         off). She believed that eggs laid on the third Tuesday of every month, when Mercury was in
                         retrograde and the barn
-                        cat was facing precisely northeast, produced yolks with exactly 3.7% more spiritual
-                        enlightenment.</p>
+                        cat was facing precisely northeast, produced yolks with exactly 3.7% more <a
+                            href="https://amzn.to/4fQ4mUm" target="_blank">spiritual enlightenment</a>.</p>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90">
                         <rect width="728" height="90" fill="#f8f9fa" />
                         <rect width="728" height="90" fill="none" stroke="#e9ecef" stroke-width="1" />
@@ -1007,8 +1216,9 @@
                         small town to its core
                         and led to the establishment of the Annual Egg Appreciation Festival (tickets for this year's
                         event are selling fast
-                        &ndash; check my LinkTree for details). Grandma Mildred had discovered that playing baroque
-                        music to eggs during the
+                        &ndash; check my LinkTree for details). Grandma Mildred had discovered that playing <a
+                            href="https://amzn.to/4fQXlm7" target="_blank">baroque
+                            music</a> to eggs during the
                         boiling process resulted in what she claimed was "a more sophisticated sulfur aroma." The local
                         newspaper called her
                         methods "revolutionary, if slightly concerning." The scientific community called it "potentially
@@ -1069,7 +1279,8 @@
                         stored pointy end up or
                         down (a debate that later caused a rift at the 1974 International Egg Congress, which I cover
                         extensively in my
-                        upcoming documentary "Shell Shocked: The Truth About Big Egg").</p>
+                        upcoming documentary <a href="https://amzn.to/40dRkKD" target="_blank">"Shell Shocked: The Truth
+                            About Big Egg"</a>).</p>
 
                     <img src="2.webp"
                         alt="Step-by-step process showing eggs being lowered into boiling water with slotted spoon">
@@ -1128,7 +1339,7 @@
                         <!-- CTA Button -->
                         <g transform="translate(560, 25)">
                             <rect width="120" height="35" fill="#dc3545" rx="4" />
-                            <text x="20" y="23" font-family="Arial" font-size="14" fill="#fff">Subscribe/text>
+                            <text x="20" y="23" font-family="Arial" font-size="14" fill="#fff">Subscribe</text>
                         </g>
                     </svg>
                     <p>When Grandma Mildred passed away in 2012 (surrounded by her beloved <a
@@ -1138,7 +1349,8 @@
                         sacred responsibility.
                         The recipe I'm about to share isn't just a recipe &ndash; it's five generations of egg wisdom,
                         refined through
-                        countless hours of meditation in the chicken coop and perfected through scientific methods that
+                        countless hours of meditation in the <a href="https://amzn.to/3CdODAB"
+                            target="_blank">chicken</a> coop and perfected through scientific methods that
                         some might call
                         "unconventional" or "legally questionable."</p>
 
@@ -1210,7 +1422,8 @@
                         Whisperer" (and a
                         concerned call from my therapist), I want you to understand that this isn't just about boiling
                         eggs. This is about
-                        honoring a legacy, about maintaining the sacred bond between human and chicken, about achieving
+                        honoring a legacy, about maintaining the sacred bond between human and <a
+                            href="https://amzn.to/3CdODAB" target="_blank">chicken</a>, about achieving
                         the perfect harmony
                         of time, temperature, and interpretive egg dance (optional but recommended).</p>
                 </div>
@@ -1398,11 +1611,14 @@
                         </svg>
                         <h4>Equipment Needed:</h4>
                         <ul>
-                            <li>A pot (any pot will do, but for best results, use my affiliate-linked Egg-cellent
+                            <li><a href="https://amzn.to/4hazoqW" target="_blank">A pot</a> (any pot will do, but for
+                                best results, use my
+                                affiliate-linked Egg-cellent
                                 Boiling
                                 Pot&trade;)</li>
                             <li>Access to heat</li>
-                            <li>Timer (your phone works, but my EggTimer Pro App gives you PERFECT results every time!)
+                            <li><a href="https://amzn.to/4gSHSDG" target="_blank">Timer</a> (your phone works, but my
+                                EggTimer Pro App gives you PERFECT results every time!)
                             </li>
                         </ul>
 
@@ -1425,45 +1641,114 @@
                         </div>
 
 
-                        <h3>Egg Boiling Instructions:</h3>
-                        <ol>
-                            <li>Fill your pot with water. The amount doesn't really matter as long as it covers the
-                                eggs,
-                                but I've found that
-                                exactly 947ml at 21.3&deg;C (70.34&deg;F) yields optimal results based on my extensive
-                                testing using NASA-grade
-                                measurement equipment.</li>
-                            <li>Place your pot on the heat source. For best results, use a stovetop, though a campfire
-                                or
-                                volcanic hot spring
-                                will work in a pinch! PRO TIP: Face the pot handle exactly 37 degrees northeast for
-                                optimal
-                                heat distribution.
-                            </li>
-                            <li>Wait for the water to boil. You'll know it's ready when you see bubbles rising to the
-                                surface! (EXPERT TIP:
-                                These are called "water bubbles" in professional cooking circles.)</li>
-                            <li>Carefully lower your eggs into the water. I recommend using a spoon, though advanced
-                                users
-                                may attempt the
-                                hand-lowering method (see my 12-week Egg Mastery Course for detailed technique
-                                training).
-                            </li>
-                            <li>Set your timer for 7 minutes. During this time, you can:
-                                <ul>
-                                    <li>Sign up for my newsletter</li>
-                                    <li>Follow me on social media</li>
-                                    <li>Read about how I discovered this technique while backpacking through Tibet</li>
-                                    <li>Check out my other 147 egg recipes</li>
-                                    <li>Listen to my podcast: "Eggs &amp; Everything"</li>
-                                </ul>
-                            </li>
-                            <li>Remove eggs and place in cold water. GAME-CHANGING SECRET: The water should be cold!
-                                This
-                                stops the cooking
-                                process (mind-blowing, I know!)</li>
-                        </ol>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90">
+                        <section class="recipe-instructions" aria-labelledby="instructions-title">
+                            <h3 id="instructions-title">Egg Boiling Instructions:</h3>
+
+                            <div class="instructions-container" itemprop="recipeInstructions">
+                                <!-- Step 1 -->
+                                <div class="instruction-step" itemscope itemtype="https://schema.org/HowToStep">
+                                    <div class="step-content" itemprop="text">
+                                        <span class="step-number" aria-hidden="true">1</span>
+                                        <div class="step-text">
+                                            <p>Fill your pot with water. The amount doesn't really matter as long as it
+                                                covers the eggs, but
+                                                I've found that exactly
+                                                <span class="measurement">947ml</span> at
+                                                <span class="temperature">21.3°C (70.34°F)</span>
+                                                yields optimal results based on my extensive testing using NASA-grade
+                                                <a href="https://amzn.to/3PwpQuK" target="_blank">measurement
+                                                    equipment</a>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="instruction-step" itemscope itemtype="https://schema.org/HowToStep">
+                                    <div class="step-content" itemprop="text">
+                                        <span class="step-number" aria-hidden="true">2</span>
+                                        <div class="step-text">
+                                            <p>Place your pot on the heat source. For best results, use a stovetop,
+                                                though a campfire or
+                                                volcanic hot spring will work in a pinch!</p>
+                                            <div class="pro-tip" aria-label="Professional Tip">
+                                                <strong>PRO TIP:</strong> Face the pot handle exactly 37 degrees
+                                                northeast for optimal heat
+                                                distribution.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div class="instruction-step" itemscope itemtype="https://schema.org/HowToStep">
+                                    <div class="step-content" itemprop="text">
+                                        <span class="step-number" aria-hidden="true">3</span>
+                                        <div class="step-text">
+                                            <p>Wait for the water to boil. You'll know it's ready when you see bubbles
+                                                rising to the surface!
+                                            </p>
+                                            <div class="expert-tip" aria-label="Expert Tip">
+                                                <strong>EXPERT TIP:</strong> These are called "water bubbles" in
+                                                professional cooking circles.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 4 -->
+                                <div class="instruction-step" itemscope itemtype="https://schema.org/HowToStep">
+                                    <div class="step-content" itemprop="text">
+                                        <span class="step-number" aria-hidden="true">4</span>
+                                        <div class="step-text">
+                                            <p>Carefully lower your eggs into the water. I recommend using a spoon,
+                                                though advanced users may
+                                                attempt the hand-lowering method
+                                                <span class="course-reference">(see my <a href="#course"
+                                                        aria-label="Learn more about the Egg Mastery Course">12-week Egg
+                                                        Mastery Course</a> for
+                                                    detailed technique training)</span>.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 5 -->
+                                <div class="instruction-step" itemscope itemtype="https://schema.org/HowToStep">
+                                    <div class="step-content" itemprop="text">
+                                        <span class="step-number" aria-hidden="true">5</span>
+                                        <div class="step-text">
+                                            <p>Set your timer for 7 minutes. During this time, you can:</p>
+                                            <div class="waiting-activities" role="list"
+                                                aria-label="Suggested activities while waiting">
+                                                <div role="listitem">Sign up for my newsletter</div>
+                                                <div role="listitem">Follow me on social media</div>
+                                                <div role="listitem">Read about how I discovered this technique while
+                                                    backpacking through Tibet
+                                                </div>
+                                                <div role="listitem">Check out my other 147 egg recipes</div>
+                                                <div role="listitem">Listen to my podcast: "Eggs & Everything"</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 6 -->
+                                <div class="instruction-step" itemscope itemtype="https://schema.org/HowToStep">
+                                    <div class="step-content" itemprop="text">
+                                        <span class="step-number" aria-hidden="true">6</span>
+                                        <div class="step-text">
+                                            <p>Remove eggs and place in cold water.</p>
+                                            <div class="secret-tip" aria-label="Secret Tip">
+                                                <strong>GAME-CHANGING SECRET:</strong> The water should be cold! This
+                                                stops the cooking process
+                                                (mind-blowing, I know!)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90">
                             <rect width="728" height="90" fill="#f8f9fa" />
                             <rect width="728" height="90" fill="none" stroke="#e9ecef" stroke-width="1" />
                             <rect x="690" y="2" width="35" height="12" fill="#e9ecef" rx="2" />
@@ -1511,7 +1796,6 @@
                                 container</a> for up to 5 days, though they never last
                             that long in my
                             house because my family of 47 absolutely DEVOURS them!</p>
-                        <p><strong>Troubleshooting</strong></p>
                         <div class="faq-section">
                             <h3 class="faq-header">Troubleshooting Your Egg Journey</h3>
 
@@ -1676,57 +1960,110 @@
             <button type="button" class="decline-button">No thanks, I like mediocre eggs</button>
         </form>
     </div>
+    <div id="notificationOverlay" class="notification-overlay">
+        <div id="notificationPopup" class="notification-popup">
+            <div class="notification-content">
+                <svg class="notification-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="#5f6368">
+                    <path
+                        d="M12 3.6c-3.3 0-6 2.7-6 6v3.6l-2.4 2.4v1.2h16.8v-1.2L18 13.2V9.6c0-3.3-2.7-6-6-6zm0-2.4c.6 0 1.2.6 1.2 1.2h-2.4c0-.6.6-1.2 1.2-1.2zm3.6 16.8c0 1.998-1.602 3.6-3.6 3.6s-3.6-1.602-3.6-3.6"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <div class="notification-text">
+                    <h3>perfecthardboiledeggs.com wants to send notifications</h3>
+                    <p>Real-time alerts about optimal egg-boiling conditions based on lunar phases!</p>
+                </div>
+            </div>
+            <div class="notification-buttons">
+                <button id="denyNotifications">Block</button>
+                <button id="allowNotifications">Allow</button>
+            </div>
+        </div>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            console.log("🥚");
 
+        document.addEventListener('DOMContentLoaded', function () {
             const cookieConsent = document.getElementById('cookieConsent');
             const cookieOverlay = document.getElementById('cookieOverlay');
             const newsletterPopup = document.getElementById('newsletterPopup');
             const newsletterOverlay = document.getElementById('newsletterOverlay');
+            const notificationOverlay = document.getElementById('notificationOverlay');
+            const notificationPopup = document.getElementById('notificationPopup');
             const acceptBtn = document.getElementById('acceptCookies');
             const rejectBtn = document.getElementById('rejectCookies');
             const newsletterForm = document.getElementById('newsletterForm');
             const declineBtn = document.querySelector('.decline-button');
+            const allowBtn = document.getElementById('allowNotifications');
+            const denyBtn = document.getElementById('denyNotifications');
 
             let globalClickCount = 0;
 
-            // Show the cookie popup after a short delay
+            // Initial cookie popup
             setTimeout(() => {
                 cookieConsent.classList.add('show');
                 cookieOverlay.classList.add('show');
             }, 1000);
 
-            // Handle cookie accept
+            // Cookie handlers
             acceptBtn.addEventListener('click', () => {
                 cookieConsent.classList.remove('show');
                 cookieOverlay.classList.remove('show');
-
-                // Show newsletter popup after a delay
                 setTimeout(() => {
                     newsletterPopup.classList.add('show');
                     newsletterOverlay.classList.add('show');
-                    // Reset click count when newsletter appears
-                    globalClickCount = 0;
                 }, 750);
             });
 
-            // Handle cookie reject
             rejectBtn.addEventListener('click', () => {
                 cookieConsent.classList.remove('show');
                 cookieOverlay.classList.remove('show');
+                setTimeout(() => {
+                    newsletterPopup.classList.add('show');
+                    newsletterOverlay.classList.add('show');
+                }, 750);
             });
 
-            // Handle newsletter form submission
+            // Newsletter handlers
+            document.addEventListener('click', (e) => {
+                if (newsletterPopup.classList.contains('show')) {
+                    globalClickCount++;
+                    if (globalClickCount >= 1) {
+                        newsletterPopup.classList.remove('show');
+                        newsletterOverlay.classList.remove('show');
+                        setTimeout(() => {
+                            notificationOverlay.classList.add('show');
+                            notificationPopup.classList.add('show');
+                        }, 750);
+                    }
+                }
+            });
+
             newsletterForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 alert('Congratulations! You are now subscribed to receive hourly egg tips! 🥚');
                 newsletterPopup.classList.remove('show');
                 newsletterOverlay.classList.remove('show');
+                setTimeout(() => {
+                    notificationOverlay.classList.add('show');
+                    notificationPopup.classList.add('show');
+                }, 750);
             });
 
-            // Make the decline button move away on hover
+            // Notification handlers
+            allowBtn.addEventListener('click', () => {
+                alert("🥚 Egg Notifications Enabled! Your eggs will never be the same!");
+                notificationPopup.classList.remove('show');
+                notificationOverlay.classList.remove('show');
+            });
+
+            denyBtn.addEventListener('click', () => {
+                alert("😢 You've chosen the path of sub-optimal eggs...");
+                notificationPopup.classList.remove('show');
+                notificationOverlay.classList.remove('show');
+            });
+
+            // Moving decline button
             let declineAttempts = 0;
             declineBtn.addEventListener('mouseover', (e) => {
                 if (declineAttempts < 2) {
@@ -1737,21 +2074,6 @@
                 } else {
                     declineBtn.innerHTML = "Fine, keep living with mediocre eggs 😢";
                     declineBtn.style.transform = "none";
-                }
-            });
-
-            // Track clicks anywhere on the document
-            document.addEventListener('click', (e) => {
-                // Only count clicks when newsletter popup is visible
-                if (newsletterPopup.classList.contains('show')) {
-                    globalClickCount++;
-
-                    // After 3 clicks, dismiss the popup with a frustrated message
-                    if (globalClickCount >= 1) {
-                        alert("Ugh, fine! But don't blame us when your eggs are sub-par! 😤");
-                        newsletterPopup.classList.remove('show');
-                        newsletterOverlay.classList.remove('show');
-                    }
                 }
             });
         });

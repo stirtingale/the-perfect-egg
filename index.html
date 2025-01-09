@@ -200,8 +200,9 @@
         }
 
         p.lead {
-            font-size: 1rem;
+            font-size: 0.925rem;
             font-weight: 600;
+            padding: 0 1.8em;
         }
 
         img {
@@ -314,6 +315,10 @@
         }
 
         @media (max-width: 768px) {
+            .desktop-only {
+                display: none;
+            }
+
             .step-content {
                 flex-direction: column;
                 gap: 0.5rem;
@@ -664,6 +669,7 @@
             left: 50%;
             transform: translateX(-50%);
             width: 460px;
+            max-width: 90vw;
             background: white;
             z-index: 1021;
             display: none;
@@ -1025,7 +1031,7 @@
     <div class="grid-container">
         <!-- Hero Section -->
         <div class="hero-section text-center">
-            <h1>The PERFECT Hard-Boiled<br> Eggs Recipe</h1>
+            <h1>The PERFECT Hard-Boiled<br class="desktop-only"> Eggs Recipe</h1>
             <span class="est">Est. 2025</span>
             <br>
             <p class="lead">A Five-Generation Legacy of Egg Excellence</p>

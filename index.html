@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The PERFECT Hard-Boiled Eggs Recipe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <style>
+        /* ==========================================================================
+        1. Settings - Variables and Config
+        ========================================================================== */
+        :root {
+            /* Colors */
+            --color-primary: #0066cc;
+            --color-primary-dark: #003d7a;
+            --color-success: #28a745;
+            --color-info: #17a2b8;
+            --color-warning: #ffc107;
+            --color-danger: #e60023;
+            --color-purple: #6f42c1;
+
+            /* Neutrals */
+            --color-text: #495057;
+            --color-text-light: #6c757d;
+            --color-background: #f8f9fa;
+            --color-border: #dee2e6;
+
+            /* Spacing */
+            --spacing-xs: 0.45rem;
+            --spacing-sm: 0.8rem;
+            --spacing-md: 1.8rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3.6rem;
+
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-pill: 20px;
+
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ==========================================================================
+        2. Base Styles
+        ========================================================================== */
+        body {
+            font-family: "Open Sans", serif;
+            font-optical-sizing: auto;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            margin: var(--spacing-md) 0 var(--spacing-xs);
+        }
+
+        p,
+        ul,
+        ol {
+            font-weight: 500;
+            line-height: 1.6;
+            margin: var(--spacing-xs) 0;
+        }
+
+        img {
+            margin: 1.8em 0;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+            margin: var(--spacing-md) 0;
+        }
+
+        svg.icon {
+            margin: 0;
+            width: 1.8em;
+            fill: white;
+        }
+
+        /* ==========================================================================
+   3. Layout
+   ========================================================================== */
+        .section-main {
+            margin: var(--spacing-md) 0;
+            padding: var(--spacing-xl) 0;
+            background-color: #fff5f5;
+        }
+
+        .hero-section {
+            background-color: #fff5f5;
+            padding: var(--spacing-lg) 0;
+            margin: var(--spacing-lg) 0;
+        }
+
+        /* ==========================================================================
+        4. Components
+        ========================================================================== */
+        /* Recipe Components */
+        .recipe-meta {
+            background: var(--color-background);
+            padding: var(--spacing-sm);
+            margin: var(--spacing-sm) 0;
+        }
+
+        .recipe-content {
+            margin: var(--spacing-lg) 0;
+        }
+
+        /* Action Buttons */
+        .recipe-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .recipe-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: var(--radius-pill);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+        }
+
+        /* Button Variants */
+        [class*="-btn"]:hover {
+            transform: translateY(-2px);
+        }
+
+        .jump-btn {
+            background-color: var(--color-success);
+        }
+
+        .print-btn {
+            background-color: var(--color-info);
+        }
+
+        .pinterest-btn {
+            background-color: var(--color-danger);
+        }
+
+        .video-btn {
+            background-color: var(--color-purple);
+        }
+
+        /* Review System */
+        .review-container {
+            max-width: 800px;
+            margin: var(--spacing-md) auto;
+            font-family: var(--font-primary);
+        }
+
+        .review {
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            background: white;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .stars {
+            color: var(--color-warning);
+            letter-spacing: 2px;
+        }
+
+        .verified-purchase {
+            font-size: 12px;
+            color: var(--color-success);
+            padding: 2px 8px;
+            border-radius: var(--radius-pill);
+            background: #e8f5e9;
+        }
+
+        .review-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin: var(--spacing-md) 0;
+            color: var(--color-text);
+        }
+
+        .review-meta {
+            font-size: 14px;
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .review-content {
+            line-height: 1.6;
+            color: var(--color-text);
+        }
+
+        /* Review Variants */
+        .not-helpful {
+            background: #fff8f8;
+        }
+
+        /* Review Animations */
+        .review {
+            transition: transform 0.2s ease;
+        }
+
+        .review:hover {
+            transform: translateY(-2px);
+        }
+
+        .faq-section {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+
+        .faq-header {
+            font-size: 24px;
+            color: #212529;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #dee2e6;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .faq-question::before {
+            content: "Q:";
+            font-weight: 700;
+            color: #fd7e14;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .faq-answer {
+            padding-left: 30px;
+            color: #6c757d;
+            line-height: 1.6;
+            font-size: 16px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .faq-answer::before {
+            content: "A:";
+            font-weight: 700;
+            color: #20c997;
+            margin-right: 10px;
+            margin-left: -30px;
+            font-size: 20px;
+        }
+
+        .faq-link {
+            color: #0d6efd;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .faq-link:hover {
+            color: #0a58ca;
+            text-decoration: underline;
+        }
+
+        .nutritional-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            max-width: 500px;
+        }
+
+        .nutritional-info h3 {
+            margin: 0 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+            font-size: 1.2rem;
+        }
+
+        .nutrition-table {
+            width: 100%;
+        }
+
+        .nutrition-table tr {
+            border-bottom: 1px dotted #e9ecef;
+        }
+
+        .nutrition-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .nutrition-table td {
+            padding: 8px 0;
+            line-height: 1.4;
+        }
+
+        .nutrition-table td:first-child {
+            color: #495057;
+            font-weight: 500;
+            width: 40%;
+        }
+
+        .nutrition-table td:last-child {
+            color: #212529;
+            font-weight: 600;
+        }
+
+        .nutrition-table .quirky {
+            font-style: italic;
+            color: #20c997;
+        }
+
+        .article-footer {
+            margin-top: var(--spacing-xl);
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .article-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            align-items: center;
+        }
+
+        .article-links a {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background-color: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-pill);
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            transition: all 0.2s ease;
+        }
+
+        .article-links a:hover {
+            background-color: var(--color-border);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .article-links a::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background-color: var(--color-text-light);
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .comment-count {
+            color: var(--color-text-light);
+            font-weight: 500;
+            padding: 8px 16px;
+            background-color: var(--color-background);
+            border-radius: var(--radius-pill);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .comment-count:hover {
+            background-color: var(--color-border);
+            color: var(--color-text);
+        }
+
+        @media (max-width: 768px) {
+            .article-links {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--spacing-xs);
+            }
+
+            .article-links a {
+                text-align: left;
+                padding: var(--spacing-sm) var(--spacing-md);
+            }
+
+            .comment-count {
+                text-align: center;
+            }
+        }
+
+        /* ==========================================================================
+        5. Modals and Overlays
+        ========================================================================== */
+        /* Cookie Consent */
+        .cookie-consent {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            box-shadow: var(--shadow-md);
+            padding: var(--spacing-lg);
+            z-index: 1001;
+            width: 90%;
+            max-width: 800px;
+            height: 50vh;
+            min-height: 400px;
+            border-radius: var(--radius-md);
+            display: none;
+            overflow-y: auto;
+        }
+
+        /* Newsletter Modal */
+        .newsletter-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            box-shadow: var(--shadow-md);
+            padding: var(--spacing-xl);
+            z-index: 1011;
+            width: 95%;
+            max-width: 900px;
+            height: 80vh;
+            min-height: 500px;
+            border-radius: var(--radius-lg);
+            display: none;
+            overflow-y: auto;
+        }
+
+        /* ==========================================================================
+        6. Utilities and Animations
+        ========================================================================== */
+
+        p>a {
+            /* Base styling */
+            color: #0066cc;
+            text-decoration: none;
+            padding: 0 2px;
+            border-bottom: 2px solid #0066cc;
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+
+            /* Make the clickable area larger */
+            display: inline-block;
+            line-height: 1.4;
+
+            /* Ensure good contrast for accessibility */
+            position: relative;
+            z-index: 1;
+        }
+
+        p>a:hover {
+            /* Hover effects */
+            background-color: #0066cc15;
+            border-bottom: 2px solid #003d7a;
+            color: #003d7a;
+            transform: translateY(-1px);
+        }
+
+        p>a:active {
+            /* Click state */
+            transform: translateY(1px);
+        }
+
+        p>a:focus {
+            /* Keyboard navigation focus */
+            outline: 2px solid #0066cc;
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Add a subtle icon to external links */
+        p>a[href^="http"]:after {
+            content: " ↗";
+            font-size: 0.8em;
+            display: inline-block;
+            margin-left: 2px;
+        }
+
+        @keyframes shakeNo {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(40%, -30%) rotate(5deg);
+            }
+
+            50% {
+                transform: translate(-40%, 30%) rotate(-5deg);
+            }
+
+            75% {
+                transform: translate(40%, -20%) rotate(5deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* ==========================================================================
+        7. Media Queries
+        ========================================================================== */
+        @media (max-width: 800px) {
+            .newsletter-popup {
+                padding: var(--spacing-md);
+                height: 90vh;
+            }
+
+            .newsletter-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .newsletter-body h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .recipe-meta {
+                position: sticky;
+                top: var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <!-- Hero Section -->
+        <div class="hero-section text-center">
+            <h1>🥚 The PERFECT Hard-Boiled Eggs Recipe</h1>
+            <p class="lead">A Five-Generation Legacy of Egg Excellence</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="grid-x grid-margin-x quick-links">
+            <div class="cell small-12">
+                <div class="recipe-actions">
+                    <button onclick="scrollToRecipe()" class="recipe-btn jump-btn">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                        </svg>
+                        Jump to Recipe
+                    </button>
+
+                    <button onclick="printRecipe()" class="recipe-btn print-btn">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
+                        </svg>
+                        Print Recipe
+                    </button>
+
+                    <button onclick="saveToPinterest()" class="recipe-btn pinterest-btn">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0a12 12 0 0 0-4.37 23.17c-.1-.94-.2-2.4.04-3.44l1.4-5.96s-.36-.72-.36-1.78c0-1.67.97-2.92 2.17-2.92 1.02 0 1.51.77 1.51 1.68 0 1.03-.65 2.56-.99 3.98-.28 1.19.6 2.16 1.77 2.16 2.12 0 3.76-2.24 3.76-5.47 0-2.86-2.06-4.86-5-4.86-3.4 0-5.39 2.56-5.39 5.19 0 1.03.4 2.13.89 2.73.1.12.11.22.08.34l-.34 1.36c-.05.22-.17.27-.4.16-1.5-.7-2.43-2.89-2.43-4.65 0-3.77 2.74-7.25 7.93-7.25 4.17 0 7.41 2.97 7.41 6.94 0 4.14-2.61 7.46-6.24 7.46-1.22 0-2.36-.63-2.75-1.37l-.75 2.85c-.27 1.04-1 2.35-1.49 3.15A12 12 0 1 0 12 0z" />
+                        </svg>
+                        Save to Pinterest
+                    </button>
+
+                    <button onclick="watchVideo()" class="recipe-btn video-btn">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                        Watch Video
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="grid-x grid-margin-x">
+            <!-- Story Column -->
+            <div class="cell medium-7">
+                <div class="recipe-content">
+                    <h2>A Family Legacy of Egg Excellence</h2>
+                    <p>Before I share this life-changing <a href="https://amzn.to/4gLnq7D" target="_blank">recipe</a>
+                        that has garnered over 4.7 million pins on Pinterest and
+                        earned me a feature
+                        spot on "Extreme Egg Enthusiasts Weekly," I need to tell you about my grandmother, Mildred
+                        "Eggs-cellence"
+                        Montgomery, and how her relationship with eggs shaped not just our family's destiny, but quite
+                        possibly the entire
+                        trajectory of egg consumption in rural Vermont.</p>
+
+                    <img src="1.webp"
+                        alt="Hard-boiled eggs sliced lengthwise showing firm yellow centers, arranged on wooden cutting board with fresh herbs">
+
+                    <p>Picture it: <a href="https://amzn.to/4haHC2f" target="_blank">Vermont, 1947</a>. A young Mildred,
+                        barely seventeen, standing in her mother's kitchen,
+                        watching steam rise
+                        from a cast-iron pot that had survived two world wars and three failed attempts at making her
+                        own sourdough starter.
+                        This pot, now displayed in my custom-built egg shrine (tour available through my Patreon's
+                        platinum tier), was where
+                        it all began.</p>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90">
+                        <rect width="728" height="90" fill="#f8f9fa" />
+                        <rect width="728" height="90" fill="none" stroke="#e9ecef" stroke-width="1" />
+                        <rect x="690" y="2" width="35" height="12" fill="#e9ecef" rx="2" />
+                        <text x="694" y="11" font-family="Arial" font-size="8" fill="#6c757d">Ad</text>
+
+                        <!-- Over-Credentialed Character -->
+                        <g transform="translate(15, 20)">
+                            <circle cx="25" cy="15" r="12" fill="#adb5bd" /> <!-- Head -->
+                            <!-- Graduation cap tilted -->
+                            <path d="M15 10 L35 10 L25 5 Z" fill="#495057" />
+                            <line x1="25" y1="5" x2="30" y2="15" stroke="#495057" />
+
+                            <!-- Crazed expression -->
+                            <path d="M20 15 Q25 25 30 15" stroke="#fff" stroke-width="2" fill="none" />
+                            <!-- Maniacal grin -->
+                            <text x="18" y="12" font-family="monospace" font-size="4" fill="#fff">PhD</text>
+                            <text x="28" y="12" font-family="monospace" font-size="4" fill="#fff">MBA</text>
+
+                            <!-- Diploma-covered body -->
+                            <path d="M25 27 L25 40" stroke="#adb5bd" stroke-width="4" />
+                            <!-- Scrolls/diplomas -->
+                            <path d="M10 25 Q25 20 40 25" stroke="#dee2e6" fill="none" />
+                            <path d="M15 35 Q25 30 35 35" stroke="#dee2e6" fill="none" />
+                            <path d="M20 45 Q25 40 30 45" stroke="#dee2e6" fill="none" />
+                        </g>
+
+                        <!-- Ad Copy -->
+                        <text x="85" y="35" font-family="Arial" font-size="14" fill="#495057"
+                            font-weight="bold">PRESTIGIOUS: Certified Egg
+                            Master (CEM) Program</text>
+                        <text x="85" y="55" font-family="Arial" font-size="12" fill="#6c757d">Harvard-adjacent
+                            certification! Only 4 years +
+                            $50,000!</text>
+
+                        <!-- CTA Button -->
+                        <g transform="translate(560, 25)">
+                            <rect width="120" height="35" fill="#fd7e14" rx="4" />
+                            <text x="25" y="23" font-family="Arial" font-size="14" fill="#fff">Enroll Now</text>
+                        </g>
+                    </svg>
+                    <p>Grandma Mildred didn't just keep <a href="https://amzn.to/3WbspGr" target="_blank">chickens</a>
+                        &ndash; she communed with them. Every morning at
+                        precisely 5:17 AM (a time
+                        she swore was optimal for yolk density based on the position of <a
+                            href="https://amzn.to/4fSuQ7R" target="_blank">Orion's Belt</a>), she would trek
+                        out to her heritage
+                        coop in her signature egg-white <a href="https://amzn.to/40BHB2h" target="_blank">palazzo
+                            pants</a> and <a href="https://amzn.to/426MalZ" target="_blank">hand-crocheted shawl</a>,
+                        adorned with tiny egg
+                        patterns she designed
+                        during the Great Egg Shortage of '52. Her prized flock of Heritage Columbian Wyandotte <a
+                            href="https://amzn.to/3CdODAB" target="_blank">chickens</a>
+                        (a lineage we've
+                        maintained through careful selection and monthly <a href="https://amzn.to/3CdODAB"
+                            target="_blank">chickens</a> therapy sessions) would greet her with
+                        what she described
+                        as "a symphony of clucks that could bring a grown man to tears."</p>
+                    <p>But it wasn't just about the <a href="https://amzn.to/3CdODAB" target="_blank">chickens</a>. You
+                        see, my grandmother had a theory &ndash; one that
+                        would eventually be
+                        published in her controversial manifesto "Eggs: The Oval Truth" (available now in my shop, use
+                        code YOLKYLIFE for 5%
+                        off). She believed that eggs laid on the third Tuesday of every month, when Mercury was in
+                        retrograde and the barn
+                        cat was facing precisely northeast, produced yolks with exactly 3.7% more spiritual
+                        enlightenment.</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90">
+                        <rect width="728" height="90" fill="#f8f9fa" />
+                        <rect width="728" height="90" fill="none" stroke="#e9ecef" stroke-width="1" />
+                        <rect x="690" y="2" width="35" height="12" fill="#e9ecef" rx="2" />
+                        <text x="694" y="11" font-family="Arial" font-size="8" fill="#6c757d">Ad</text>
+
+                        <!-- Paranoid Character in Hazmat Suit -->
+                        <g transform="translate(15, 20)">
+                            <!-- Hazmat Helmet -->
+                            <circle cx="25" cy="15" r="14" fill="none" stroke="#adb5bd" stroke-width="2" />
+                            <circle cx="25" cy="15" r="12" fill="#dee2e6" /> <!-- Head -->
+
+                            <!-- Terrified expression -->
+                            <path d="M20 15 Q25 18 30 15" stroke="#adb5bd" stroke-width="2" fill="none" />
+                            <circle cx="20" cy="12" r="2" fill="#adb5bd" /> <!-- Wide eyes -->
+                            <circle cx="30" cy="12" r="2" fill="#adb5bd" />
+
+                            <!-- Hazmat Suit -->
+                            <path d="M11 29 L39 29 L35 50 L15 50 Z" fill="#dee2e6" stroke="#adb5bd" />
+                            <path d="M20 29 L20 50" stroke="#adb5bd" stroke-width="1" />
+                            <path d="M30 29 L30 50" stroke="#adb5bd" stroke-width="1" />
+
+                            <!-- Warning Symbols -->
+                            <text x="10" y="40" font-family="Arial" font-size="6" fill="#dc3545">⚠</text>
+                            <text x="35" y="40" font-family="Arial" font-size="6" fill="#dc3545">☢</text>
+                        </g>
+
+                        <!-- Ad Copy -->
+                        <text x="85" y="35" font-family="Arial" font-size="14" fill="#495057" font-weight="bold">PROTECT
+                            YOURSELF:
+                            Professional Egg Insurance</text>
+                        <text x="85" y="55" font-family="Arial" font-size="12" fill="#6c757d">Coverage for shell breaks,
+                            yolk leaks, and
+                            emotional damage!</text>
+
+                        <!-- CTA Button -->
+                        <g transform="translate(560, 25)">
+                            <rect width="120" height="35" fill="#6610f2" rx="4" />
+                            <text x="20" y="23" font-family="Arial" font-size="14" fill="#fff">Get Safe Now</text>
+                        </g>
+                    </svg>
+                    <p>I remember spending summers at her farm, watching her perform her sacred egg-boiling ritual. She
+                        wouldn't just boil
+                        eggs &ndash; she would create what she called "Oval Orbs of Optimization." Each egg was
+                        carefully selected based on
+                        its aura (she had synesthesia specifically related to egg shells &ndash; a condition we now call
+                        Ovum-Chromatic
+                        Sensitivity, as discussed in episode 47 of my podcast "Eggs &amp; Everything: After Dark").</p>
+                    <p>Of course, this was years before the infamous "Montgomery Egg Incident of 1963" that shook our
+                        small town to its core
+                        and led to the establishment of the Annual Egg Appreciation Festival (tickets for this year's
+                        event are selling fast
+                        &ndash; check my LinkTree for details). Grandma Mildred had discovered that playing baroque
+                        music to eggs during the
+                        boiling process resulted in what she claimed was "a more sophisticated sulfur aroma." The local
+                        newspaper called her
+                        methods "revolutionary, if slightly concerning." The scientific community called it "potentially
+                        problematic." The
+                        <a href="https://amzn.to/3CdODAB" target="_blank">chickens</a>, according to Grandma, called it
+                        "cluck-worthy."
+                    </p>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90">
+                        <rect width="728" height="90" fill="#f8f9fa" />
+                        <rect width="728" height="90" fill="none" stroke="#e9ecef" stroke-width="1" />
+                        <rect x="690" y="2" width="35" height="12" fill="#e9ecef" rx="2" />
+                        <text x="694" y="11" font-family="Arial" font-size="8" fill="#6c757d">Ad</text>
+
+                        <!-- Slightly Worried Character -->
+                        <g transform="translate(15, 20)">
+                            <circle cx="25" cy="15" r="12" fill="#adb5bd" /> <!-- Head -->
+                            <path d="M20 14 Q25 12 30 14" stroke="#fff" stroke-width="2" fill="none" />
+                            <!-- Slight frown -->
+                            <circle cx="20" cy="10" r="2" fill="#fff" /> <!-- Left eye -->
+                            <circle cx="30" cy="10" r="2" fill="#fff" /> <!-- Right eye -->
+                            <line x1="25" y1="27" x2="25" y2="40" stroke="#adb5bd" stroke-width="4" /> <!-- Body -->
+                            <line x1="25" y1="30" x2="15" y2="38" stroke="#adb5bd" stroke-width="3" /> <!-- Left arm -->
+                            <line x1="25" y1="30" x2="35" y2="38" stroke="#adb5bd" stroke-width="3" />
+                            <!-- Right arm -->
+                            <line x1="25" y1="40" x2="20" y2="50" stroke="#adb5bd" stroke-width="3" /> <!-- Left leg -->
+                            <line x1="25" y1="40" x2="30" y2="50" stroke="#adb5bd" stroke-width="3" />
+                            <!-- Right leg -->
+                            <!-- Cracked Egg -->
+                            <ellipse cx="40" cy="35" rx="5" ry="7" fill="#fff" stroke="#adb5bd" />
+                            <path d="M37 32 L43 32" stroke="#adb5bd" stroke-width="1" />
+                        </g>
+
+                        <!-- Ad Copy -->
+                        <text x="85" y="35" font-family="Arial" font-size="14" fill="#495057" font-weight="bold">UPGRADE
+                            NOW: Quantum Egg
+                            Alignment Tool</text>
+                        <text x="85" y="55" font-family="Arial" font-size="12" fill="#6c757d">Your eggs aren't aligned
+                            with the Earth's
+                            magnetic field!</text>
+
+                        <!-- CTA Button -->
+                        <g transform="translate(560, 25)">
+                            <rect width="120" height="35" fill="#28a745" rx="4" />
+                            <text x="25" y="23" font-family="Arial" font-size="14" fill="#fff">Learn More</text>
+                        </g>
+                    </svg>
+                    <p>But Grandma Mildred's influence extended far beyond our farmstead. During the <a
+                            href="https://amzn.to/4fPXuq3" target="_blank">Cultural Revolution</a>
+                        of the 1960s, while
+                        others were protesting in the streets, she was quietly leading her own revolution &ndash; the
+                        Oval Revolution, as
+                        she dubbed it in her second memoir "Scrambled Dreams, Hard-Boiled Reality" (foreword by that one
+                        guy who once won a
+                        local egg-and-spoon race). She established the first underground egg-boiling speakeasy, where
+                        people would gather in
+                        secret to learn her techniques and discuss controversial topics like whether eggs should be
+                        stored pointy end up or
+                        down (a debate that later caused a rift at the 1974 International Egg Congress, which I cover
+                        extensively in my
+                        upcoming documentary "Shell Shocked: The Truth About Big Egg").</p>
+
+                    <img src="2.webp"
+                        alt="Step-by-step process showing eggs being lowered into boiling water with slotted spoon">
+
+                    <p>My own journey with eggs began under her tutelage. I can still remember the first time she let me
+                        handle her precious
+                        <a href="https://amzn.to/4hbtar3" target="_blank">egg timer</a> a custom-made hourglass filled
+                        with crushed eggshells from
+                        historically
+                        significant <a href="https://amzn.to/3CdODAB" target="_blank">chickens</a>.
+                        "Remember, dear," she would say, adjusting her signature egg-shaped spectacles, "a watched egg
+                        never boils... unless
+                        you're maintaining optimal eye contact at a 42-degree angle."
+                    </p>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90">
+                        <rect width="728" height="90" fill="#f8f9fa" />
+                        <rect width="728" height="90" fill="none" stroke="#e9ecef" stroke-width="1" />
+                        <rect x="690" y="2" width="35" height="12" fill="#e9ecef" rx="2" />
+                        <text x="694" y="11" font-family="Arial" font-size="8" fill="#6c757d">Ad</text>
+
+                        <!-- Frustrated Character Pulling Hair -->
+                        <g transform="translate(15, 20)">
+                            <circle cx="25" cy="15" r="12" fill="#adb5bd" /> <!-- Head -->
+                            <path d="M20 15 Q25 18 30 15" stroke="#fff" stroke-width="2" fill="none" />
+                            <!-- Strong frown -->
+                            <path d="M15 5 Q25 0 35 5" stroke="#adb5bd" stroke-width="2" fill="none" />
+                            <!-- Hair being pulled -->
+                            <circle cx="20" cy="10" r="2" fill="#fff" /> <!-- Left eye -->
+                            <circle cx="30" cy="10" r="2" fill="#fff" /> <!-- Right eye -->
+                            <path d="M20 10 L18 8 M30 10 L32 8" stroke="#fff" stroke-width="1" /> <!-- Stressed eyes -->
+                            <line x1="25" y1="27" x2="25" y2="40" stroke="#adb5bd" stroke-width="4" /> <!-- Body -->
+                            <path d="M25 30 Q15 25 10 35" stroke="#adb5bd" stroke-width="3" fill="none" />
+                            <!-- Left arm pulling hair -->
+                            <path d="M25 30 Q35 25 40 35" stroke="#adb5bd" stroke-width="3" fill="none" />
+                            <!-- Right arm pulling hair -->
+                            <line x1="25" y1="40" x2="20" y2="50" stroke="#adb5bd" stroke-width="3" /> <!-- Left leg -->
+                            <line x1="25" y1="40" x2="30" y2="50" stroke="#adb5bd" stroke-width="3" />
+                            <!-- Right leg -->
+                        </g>
+
+                        <!-- Premium Water Bottle -->
+                        <g transform="translate(45, 25)">
+                            <path d="M0 10 Q5 0 10 10 L8 30 Q5 32 2 30 Z" fill="#dee2e6" stroke="#adb5bd" />
+                            <text x="2" y="22" font-family="Arial" font-size="4" fill="#6c757d">H₂O</text>
+                        </g>
+
+                        <!-- Ad Copy -->
+                        <text x="85" y="35" font-family="Arial" font-size="14" fill="#495057"
+                            font-weight="bold">PREMIUM: Artisanal Egg
+                            Boiling Water</text>
+                        <text x="85" y="55" font-family="Arial" font-size="12" fill="#6c757d">Harvested from Himalayan
+                            glaciers during a
+                            full moon! Only $99.99/bottle</text>
+
+                        <!-- CTA Button -->
+                        <g transform="translate(560, 25)">
+                            <rect width="120" height="35" fill="#dc3545" rx="4" />
+                            <text x="20" y="23" font-family="Arial" font-size="14" fill="#fff">Subscribe/text>
+                        </g>
+                    </svg>
+                    <p>When Grandma Mildred passed away in 2012 (surrounded by her beloved <a
+                            href="https://amzn.to/3CdODAB" target="_blank">chickens</a> and her extensive
+                        collection of
+                        egg-related Victorian literature), she left me not just her secret techniques, but also her
+                        sacred responsibility.
+                        The recipe I'm about to share isn't just a recipe &ndash; it's five generations of egg wisdom,
+                        refined through
+                        countless hours of meditation in the chicken coop and perfected through scientific methods that
+                        some might call
+                        "unconventional" or "legally questionable."</p>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90">
+                        <rect width="728" height="90" fill="#f8f9fa" />
+                        <rect width="728" height="90" fill="none" stroke="#e9ecef" stroke-width="1" />
+                        <rect x="690" y="2" width="35" height="12" fill="#e9ecef" rx="2" />
+                        <text x="694" y="11" font-family="Arial" font-size="8" fill="#6c757d">Ad</text>
+
+                        <!-- Meditation Character Surrounded by Broken Eggs -->
+                        <g transform="translate(15, 20)">
+                            <circle cx="25" cy="15" r="12" fill="#adb5bd" /> <!-- Head -->
+                            <path d="M20 15 Q25 20 30 15" stroke="#fff" stroke-width="2" fill="none" />
+                            <!-- Extreme frown -->
+                            <line x1="18" y1="8" x2="22" y2="12" stroke="#fff" /> <!-- Left eye (X) -->
+                            <line x1="22" y1="8" x2="18" y2="12" stroke="#fff" />
+                            <line x1="28" y1="8" x2="32" y2="12" stroke="#fff" /> <!-- Right eye (X) -->
+                            <line x1="32" y1="8" x2="28" y2="12" stroke="#fff" />
+                            <path d="M15 5 Q25 0 35 5" stroke="#adb5bd" stroke-width="2" /> <!-- Frazzled hair -->
+                            <path d="M15 3 Q25 8 35 3" stroke="#adb5bd" stroke-width="2" />
+
+                            <!-- Meditation Pose -->
+                            <path d="M25 27 L25 35 Q15 45 35 45 Q25 35 25 35" stroke="#adb5bd" stroke-width="4"
+                                fill="none" />
+
+                            <!-- Broken Eggs Around -->
+                            <path d="M10 40 Q15 35 20 40" stroke="#adb5bd" fill="none" />
+                            <path d="M40 40 Q35 35 30 40" stroke="#adb5bd" fill="none" />
+                            <path d="M15 30 L20 35" stroke="#adb5bd" />
+                            <path d="M35 30 L30 35" stroke="#adb5bd" />
+                        </g>
+
+                        <!-- Ad Copy -->
+                        <text x="85" y="35" font-family="Arial" font-size="14" fill="#495057" font-weight="bold">MINDFUL
+                            EGGS: 30-Day Egg
+                            Meditation Course</text>
+                        <text x="85" y="55" font-family="Arial" font-size="12" fill="#6c757d">Find inner peace through
+                            egg harmony. Free egg
+                            mindfulness journal included!</text>
+
+                        <!-- CTA Button -->
+                        <g transform="translate(560, 25)">
+                            <rect width="120" height="35" fill="#17a2b8" rx="4" />
+                            <text x="15" y="23" font-family="Arial" font-size="14" fill="#fff">Find Peace</text>
+                        </g>
+                    </svg>
+                    <p>Every time I boil an egg using her method, I swear I can hear her voice whispering, "A little
+                        more to the left, dear,
+                        the water's chakras aren't aligned." And you know what? She was always right. The proof is in
+                        the perfectly centered
+                        yolks that have earned me international acclaim and several restraining orders from competing
+                        egg influencers.</p>
+
+                    <div class="review not-helpful">
+                        <div class="review-header">
+                            <span class="stars">★</span>
+                            <span class="verified-purchase">Verified Purchase</span>
+                        </div>
+                        <h3 class="review-title">Didn't work with oranges</h3>
+                        <div class="review-meta">By FruitFanatic23</div>
+                        <p class="review-content">Didn't have any eggs so I tried boiling oranges instead using the same
+                            method. They came
+                            out terrible and my pot now has weird citrus stains. Would not recommend for citrus fruits.
+                            Also, my quantum egg
+                            timer doesn't work with oranges? Waste of money.</p>
+                    </div>
+
+                    <p>So before we dive into this revolutionary technique that has earned me the nickname "The Egg
+                        Whisperer" (and a
+                        concerned call from my therapist), I want you to understand that this isn't just about boiling
+                        eggs. This is about
+                        honoring a legacy, about maintaining the sacred bond between human and chicken, about achieving
+                        the perfect harmony
+                        of time, temperature, and interpretive egg dance (optional but recommended).</p>
+                </div>
+            </div>
+
+            <!-- Recipe Card -->
+            <div class="cell medium-4 medium-offset-1  self-align-top">
+                <div class="recipe-meta    ">
+                    <h3>Recipe Details</h3>
+                    <ul class="no-bullet">
+                        <li>⏱️ Prep Time: 30 seconds</li>
+                        <li>⏲️ Cook Time: 7 minutes</li>
+                        <li>🍳 Total Time: 7 minutes 30 seconds</li>
+                        <li>🥚 Servings: 6 eggs</li>
+                        <li>📊 Calories: 72 per egg</li>
+                    </ul>
+
+                    <h4>Key Ingredients</h4>
+                    <ul class="no-bullet">
+                        <li>Eggs</li>
+                        <li><a href="https://amzn.to/429nSIa" target="_blank">Water</a></li>
+                        <li>Optional: gravity</li>
+                    </ul>
+
+                    <h4>Equipment Needed</h4>
+                    <ul class="no-bullet">
+                        <li><a href="https://amzn.to/422F4z9" target="_blank">Pot</a></li>
+                        <li><a href="https://amzn.to/426LAVl" target="_blank">Access to heat</a></li>
+                        <li><a href="https://amzn.to/40pugJX" target="_blank">Timer</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instructions -->
+    <div id="recipe" class="section-main ">
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x align-center">
+                <div class="cell large-8">
+                    <div class="recipe-content">
+                        <h2>The Perfect Egg Recipe.</h2>
+                        <p>Why spend your precious morning minutes wondering how to achieve egg perfection? After
+                            testing
+                            147 different
+                            egg-boiling methods across 12 different altitudes using eggs from 23 different breeds of
+                            heritage <a href="https://amzn.to/3CdODAB" target="_blank">chickens</a>, I've
+                            discovered the ULTIMATE technique that will CHANGE YOUR LIFE. But first, let me tell you
+                            about
+                            my grandmother's
+                            <a href="https://amzn.to/3C11I09" target="_blank">chicken coop</a> in rural Vermont...
+                        </p>
+
+                        <img src="3.webp"
+                            alt="Peeled six-minute egg with perfectly set white and liquid gold center running onto toast">
+
+                        <div class="review">
+                            <div class="review-header">
+                                <span class="stars">★★★★★</span>
+                                <span class="verified-purchase">Verified Purchase</span>
+                            </div>
+                            <h3 class="review-title">Life-Changing Egg Mastery!</h3>
+                            <div class="review-meta">By EggFluencer | Top 1 Egg Reviewer</div>
+                            <p class="review-content">After 47 years of sub-par eggs, I've finally achieved
+                                enlightenment!
+                                The secret really is
+                                in the 947ml of water at precisely 21.3°C. My chakras are aligned, my aura is cleansed,
+                                and
+                                my yolks are
+                                PERFECTLY centered. Worth every penny of the $599 premium egg-boiling masterclass!</p>
+                        </div>
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90">
+                            <rect width="728" height="90" fill="#f8f9fa" />
+                            <rect width="728" height="90" fill="none" stroke="#e9ecef" stroke-width="1" />
+                            <rect x="690" y="2" width="35" height="12" fill="#e9ecef" rx="2" />
+                            <text x="694" y="11" font-family="Arial" font-size="8" fill="#6c757d">Ad</text>
+
+                            <!-- Manic Character Throwing Timer -->
+                            <g transform="translate(15, 20)">
+                                <circle cx="25" cy="15" r="12" fill="#adb5bd" /> <!-- Head -->
+                                <path d="M15 3 Q25 15 35 3" stroke="#adb5bd" stroke-width="2" /> <!-- Wild hair -->
+                                <path d="M15 5 Q25 0 35 5" stroke="#adb5bd" stroke-width="2" />
+                                <path d="M20 15 Q25 22 30 15" stroke="#fff" stroke-width="2" fill="none" />
+                                <!-- Maniacal grin -->
+                                <circle cx="20" cy="10" r="3" fill="#fff" /> <!-- Wide eyes -->
+                                <circle cx="30" cy="10" r="3" fill="#fff" />
+                                <circle cx="20" cy="10" r="1" fill="#adb5bd" /> <!-- Pupils -->
+                                <circle cx="30" cy="10" r="1" fill="#adb5bd" />
+
+                                <!-- Body throwing motion -->
+                                <path d="M25 27 Q35 30 40 20" stroke="#adb5bd" stroke-width="4" fill="none" />
+                                <line x1="25" y1="40" x2="20" y2="50" stroke="#adb5bd" stroke-width="3" />
+                                <line x1="25" y1="40" x2="30" y2="50" stroke="#adb5bd" stroke-width="3" />
+
+                                <!-- Flying Timer with motion lines -->
+                                <path d="M40 20 L50 15" stroke="#adb5bd" stroke-width="1" stroke-dasharray="2,2" />
+                                <circle cx="50" cy="15" r="5" fill="#dee2e6" stroke="#adb5bd" />
+                                <text x="47" y="17" font-family="monospace" font-size="6" fill="#6c757d">NFT</text>
+                            </g>
+
+                            <!-- Ad Copy -->
+                            <text x="85" y="35" font-family="Arial" font-size="14" fill="#495057"
+                                font-weight="bold">EXCLUSIVE: First Ever Egg
+                                Boiling NFT Collection!</text>
+                            <text x="85" y="55" font-family="Arial" font-size="12" fill="#6c757d">Own the blockchain's
+                                first
+                                egg timer! Mint
+                                price only 2 ETH!</text>
+
+                            <!-- CTA Button -->
+                            <g transform="translate(560, 25)">
+                                <rect width="120" height="35" fill="#6f42c1" rx="4" />
+                                <text x="25" y="23" font-family="Arial" font-size="14" fill="#fff">Mint Now!</text>
+                            </g>
+                        </svg>
+                        <h5>Why You'll LOVE This Recipe:</h5>
+                        <ul>
+                            <li>It's literally just boiling eggs</li>
+                            <li>Uses water (which you probably already have!)</li>
+                            <li>Keto-friendly</li>
+                            <li>Gluten-free</li>
+                            <li>Dairy-free</li>
+                            <li>Vegan-friendly (except for the eggs)</li>
+                            <li>Perfect for meal prep</li>
+                            <li>Kid-approved</li>
+                            <li>Budget-friendly</li>
+                            <li>One-pot recipe</li>
+                        </ul>
+
+                        <img src="4.webp"
+                            alt="Batch of precisely cooked 7-minute eggs peeled and ready for meal prep, showing consistent yellow centers">
+
+                        <h5>Key Ingredients:</h5>
+                        <ul>
+                            <li>Eggs (fresh from the store or your local farmer's market!)</li>
+                            <li>Water (filtered preferred, but tap water works too!)</li>
+                            <li>Optional: gravity</li>
+                        </ul>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90">
+                            <rect width="728" height="90" fill="#f8f9fa" />
+                            <rect width="728" height="90" fill="none" stroke="#e9ecef" stroke-width="1" />
+                            <rect x="690" y="2" width="35" height="12" fill="#e9ecef" rx="2" />
+                            <text x="694" y="11" font-family="Arial" font-size="8" fill="#6c757d">Ad</text>
+
+                            <!-- Tech-Obsessed Character -->
+                            <g transform="translate(15, 20)">
+                                <circle cx="25" cy="15" r="12" fill="#adb5bd" /> <!-- Head -->
+                                <path d="M15 3 Q25 15 35 3" stroke="#adb5bd" stroke-width="2" />
+                                <!-- Frazzled hair with wires -->
+                                <path d="M15 5 Q25 0 35 5" stroke="#adb5bd" stroke-width="2" />
+                                <!-- Binary in eyes -->
+                                <text x="18" y="12" font-family="monospace" font-size="4" fill="#fff">01</text>
+                                <text x="28" y="12" font-family="monospace" font-size="4" fill="#fff">10</text>
+
+                                <!-- Robot arm attachments -->
+                                <path d="M25 27 Q40 20 45 30" stroke="#adb5bd" stroke-width="3" fill="none" />
+                                <path d="M25 27 Q10 20 5 30" stroke="#adb5bd" stroke-width="3" fill="none" />
+                                <line x1="25" y1="27" x2="25" y2="40" stroke="#adb5bd" stroke-width="4" />
+                                <line x1="25" y1="40" x2="20" y2="50" stroke="#adb5bd" stroke-width="3" />
+                                <line x1="25" y1="40" x2="30" y2="50" stroke="#adb5bd" stroke-width="3" />
+
+                                <!-- Surrounding tech symbols -->
+                                <text x="5" y="20" font-family="monospace" font-size="6" fill="#adb5bd">{}</text>
+                                <text x="40" y="20" font-family="monospace" font-size="6" fill="#adb5bd">if</text>
+                                <text x="35" y="40" font-family="monospace" font-size="6" fill="#adb5bd">while</text>
+                            </g>
+
+                            <!-- Ad Copy -->
+                            <text x="85" y="35" font-family="Arial" font-size="14" fill="#495057"
+                                font-weight="bold">ChatEGG: Your AI Egg
+                                Assistant (Now with GPT-5)</text>
+                            <text x="85" y="55" font-family="Arial" font-size="12" fill="#6c757d">Machine learning +
+                                blockchain + quantum
+                                computing = perfect eggs!</text>
+
+                            <!-- CTA Button -->
+                            <g transform="translate(560, 25)">
+                                <rect width="120" height="35" fill="#20c997" rx="4" />
+                                <text x="20" y="23" font-family="Arial" font-size="14" fill="#fff">Download AI</text>
+                            </g>
+                        </svg>
+                        <h4>Equipment Needed:</h4>
+                        <ul>
+                            <li>A pot (any pot will do, but for best results, use my affiliate-linked Egg-cellent
+                                Boiling
+                                Pot&trade;)</li>
+                            <li>Access to heat</li>
+                            <li>Timer (your phone works, but my EggTimer Pro App gives you PERFECT results every time!)
+                            </li>
+                        </ul>
+
+                        <div class="review">
+                            <div class="review-header">
+                                <span class="stars">★★★★★</span>
+                                <span class="verified-purchase">Verified Purchase</span>
+                            </div>
+                            <h3 class="review-title">Harvard Should Offer a Degree in This</h3>
+                            <div class="review-meta">By Dr. Eggstein, PhD in Theoretical Egg Studies</div>
+                            <p class="review-content">The quantum alignment of water molecules relative to the egg's
+                                polar
+                                axis is truly
+                                revolutionary. I've calculated that the probability of achieving such perfect eggs by
+                                chance
+                                is approximately 1
+                                in 7.2 billion. My research team is currently preparing a peer-reviewed paper on the
+                                thermodynamic implications.
+                            </p>
+                        </div>
+
+
+                        <h3>Egg Boiling Instructions:</h3>
+                        <ol>
+                            <li>Fill your pot with water. The amount doesn't really matter as long as it covers the
+                                eggs,
+                                but I've found that
+                                exactly 947ml at 21.3&deg;C (70.34&deg;F) yields optimal results based on my extensive
+                                testing using NASA-grade
+                                measurement equipment.</li>
+                            <li>Place your pot on the heat source. For best results, use a stovetop, though a campfire
+                                or
+                                volcanic hot spring
+                                will work in a pinch! PRO TIP: Face the pot handle exactly 37 degrees northeast for
+                                optimal
+                                heat distribution.
+                            </li>
+                            <li>Wait for the water to boil. You'll know it's ready when you see bubbles rising to the
+                                surface! (EXPERT TIP:
+                                These are called "water bubbles" in professional cooking circles.)</li>
+                            <li>Carefully lower your eggs into the water. I recommend using a spoon, though advanced
+                                users
+                                may attempt the
+                                hand-lowering method (see my 12-week Egg Mastery Course for detailed technique
+                                training).
+                            </li>
+                            <li>Set your timer for 7 minutes. During this time, you can:
+                                <ul>
+                                    <li>Sign up for my newsletter</li>
+                                    <li>Follow me on social media</li>
+                                    <li>Read about how I discovered this technique while backpacking through Tibet</li>
+                                    <li>Check out my other 147 egg recipes</li>
+                                    <li>Listen to my podcast: "Eggs &amp; Everything"</li>
+                                </ul>
+                            </li>
+                            <li>Remove eggs and place in cold water. GAME-CHANGING SECRET: The water should be cold!
+                                This
+                                stops the cooking
+                                process (mind-blowing, I know!)</li>
+                        </ol>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 728 90">
+                            <rect width="728" height="90" fill="#f8f9fa" />
+                            <rect width="728" height="90" fill="none" stroke="#e9ecef" stroke-width="1" />
+                            <rect x="690" y="2" width="35" height="12" fill="#e9ecef" rx="2" />
+                            <text x="694" y="11" font-family="Arial" font-size="8" fill="#6c757d">Ad</text>
+
+                            <!-- Crystal-Covered Character -->
+                            <g transform="translate(15, 20)">
+                                <circle cx="25" cy="15" r="12" fill="#adb5bd" /> <!-- Head -->
+                                <!-- Crystal crown -->
+                                <path d="M15 5 L20 0 L30 0 L35 5" fill="none" stroke="#dee2e6" stroke-width="2" />
+                                <path d="M20 0 L25 -5 L30 0" fill="none" stroke="#dee2e6" stroke-width="2" />
+
+                                <!-- Spiraling eyes -->
+                                <path d="M18 10 Q20 12 22 10" stroke="#fff" fill="none" />
+                                <path d="M28 10 Q30 12 32 10" stroke="#fff" fill="none" />
+
+                                <!-- Crystal-covered body -->
+                                <path d="M25 27 L25 40" stroke="#adb5bd" stroke-width="4" />
+                                <path d="M15 30 L35 30" stroke="#dee2e6" stroke-width="2" />
+                                <path d="M20 35 L30 35" stroke="#dee2e6" stroke-width="2" />
+
+                                <!-- Crystal formations -->
+                                <path d="M10 25 L15 20 L20 25" fill="none" stroke="#dee2e6" />
+                                <path d="M30 25 L35 20 L40 25" fill="none" stroke="#dee2e6" />
+                                <path d="M20 45 L25 40 L30 45" fill="none" stroke="#dee2e6" />
+                            </g>
+
+                            <!-- Ad Copy -->
+                            <text x="85" y="35" font-family="Arial" font-size="14" fill="#495057"
+                                font-weight="bold">HEALING
+                                CRYSTALS: Egg
+                                Chakra Alignment Kit</text>
+                            <text x="85" y="55" font-family="Arial" font-size="12" fill="#6c757d">Align your egg's aura!
+                                Free sage bundle +
+                                moon-charged water!</text>
+
+                            <!-- CTA Button -->
+                            <g transform="translate(560, 25)">
+                                <rect width="120" height="35" fill="#e83e8c" rx="4" />
+                                <text x="25" y="23" font-family="Arial" font-size="14" fill="#fff">Ascend Now</text>
+                            </g>
+                        </svg>
+                        <p>Storage Tips: Store peeled eggs in an <a href="https://amzn.to/3Pss4v6"
+                                target="_blank">airtight
+                                container</a> for up to 5 days, though they never last
+                            that long in my
+                            house because my family of 47 absolutely DEVOURS them!</p>
+                        <p><strong>Troubleshooting</strong></p>
+                        <div class="faq-section">
+                            <h3 class="faq-header">Troubleshooting Your Egg Journey</h3>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    My eggs cracked!
+                                </div>
+                                <div class="faq-answer">
+                                    Mercury must be in retrograde. Try again while facing north. For best results,
+                                    consult our Celestial Egg Alignment Chart.
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    The yolks are too hard/soft!
+                                </div>
+                                <div class="faq-answer">
+                                    Have you considered your elevation? Download our free 75-page egg-boiling altitude
+                                    adjustment guide!
+                                    Includes quantum calculations for every possible elevation on Earth (and Mars).
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    Why isn't my water quantum-aligned?
+                                </div>
+                                <div class="faq-answer">
+                                    Our patented Water Quantum Alignment Device™ (sold separately, $299.99) can help
+                                    resolve this common issue.
+                                    Remember to recalibrate it during each full moon.
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    My egg timer isn't working!
+                                </div>
+                                <div class="faq-answer">
+                                    Have you tried turning it off and on again while chanting "Perfect yolks, perfect
+                                    life" three times?
+                                    Also ensure your timer is positioned at exactly 37° relative to magnetic north.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nutritional-info">
+                            <h3>Nutritional Information</h3>
+                            <table class="nutrition-table">
+                                <tr>
+                                    <td>Serving Size:</td>
+                                    <td>1 egg</td>
+                                </tr>
+                                <tr>
+                                    <td>Calories:</td>
+                                    <td>72</td>
+                                </tr>
+                                <tr>
+                                    <td>Protein:</td>
+                                    <td class="quirky">yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Eggs:</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Water exposure:</td>
+                                    <td class="quirky">significant</td>
+                                </tr>
+                                <tr>
+                                    <td>Joy factor:</td>
+                                    <td class="quirky">∞</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>Don't forget to SMASH that like button, DESTROY that share button, and OBLITERATE that
+                            subscribe
+                            button! And
+                            remember, as my great-grandmother always said while tending to her prized Heritage Columbian
+                            Wyandotte <a href="https://amzn.to/3CdODAB" target="_blank">chickens</a>, "An
+                            egg is just an egg until you boil it in water."</p>
+                        <div class="article-footer">
+                            <div class="article-links">
+                                <span class="comment-count">[83 comments]</span>
+
+                                <a href="#">
+                                    Related: "5 Mind-Blowing Ways to Use Eggshells in Your Garden"
+                                </a>
+
+                                <a href="#">
+                                    Check out: "Why You've Been Eating Eggs Wrong Your Whole Life"
+                                </a>
+
+                                <a href="#">
+                                    Don't Miss: "My $50,000 Custom Egg Kitchen Renovation"
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <!-- Footer -->
+        <footer class="grid-x grid-margin-x">
+            <div class="cell large-12 text-center">
+                <p>Why can't we have nice things.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Add this HTML just before the closing body tag -->
+    <div class="cookie-overlay" id="cookieOverlay"></div>
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-content">
+            <div>
+                <h3>🍪 Cookie Settings</h3>
+                <p>We use cookies to enhance your egg-boiling experience and analyze our egg traffic. These cookies help
+                    us
+                    understand how visitors interact with our website, improve our egg-related services, and ensure you
+                    get
+                    the most perfectly boiled eggs possible.</p>
+                <p>We value your privacy as much as we value properly centered yolks. Please select your cookie
+                    preferences
+                    below.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button id="acceptCookies" class="button success">Accept All Cookies</button>
+                <button id="rejectCookies" class="button secondary">Essential Only</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this HTML after your cookie consent popup -->
+    <div class="newsletter-overlay" id="newsletterOverlay"></div>
+    <div id="newsletterPopup" class="newsletter-popup">
+        <div class="newsletter-content">
+            <div class="newsletter-header">
+                <h2>🥚 WAIT! Don't miss out on egg-citing updates!</h2>
+                <p class="subheading">Join 147,283 egg enthusiasts who receive my life-changing egg content!</p>
+            </div>
+
+            <div class="newsletter-body">
+                <p>Sign up now and receive my FREE guide:</p>
+                <h3>"7 SHOCKING Egg-Boiling Secrets They Don't Want You To Know!"</h3>
+                <p class="bonus-text">BONUS: First 100 subscribers today get my exclusive "Egg Timer Meditation Guide"
+                    ($97
+                    value!)</p>
+
+                <form id="newsletterForm" class="newsletter-form">
+                    <input type="email" placeholder="Enter your best email address..." required>
+                    <button type="submit" class="button large success">YES! I WANT PERFECT EGGS! 🥚</button>
+                    <button type="button" class="button small secondary decline-button">No thanks, I prefer rubbery egg
+                        whites</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cookieConsent = document.getElementById('cookieConsent');
+            const cookieOverlay = document.getElementById('cookieOverlay');
+            const newsletterPopup = document.getElementById('newsletterPopup');
+            const newsletterOverlay = document.getElementById('newsletterOverlay');
+            const acceptBtn = document.getElementById('acceptCookies');
+            const rejectBtn = document.getElementById('rejectCookies');
+            const newsletterForm = document.getElementById('newsletterForm');
+            const declineBtn = document.querySelector('.decline-button');
+
+            let globalClickCount = 0;
+
+            // Show the cookie popup after a short delay
+            setTimeout(() => {
+                cookieConsent.classList.add('show');
+                cookieOverlay.classList.add('show');
+            }, 1000);
+
+            // Handle cookie accept
+            acceptBtn.addEventListener('click', () => {
+                cookieConsent.classList.remove('show');
+                cookieOverlay.classList.remove('show');
+
+                // Show newsletter popup after a delay
+                setTimeout(() => {
+                    newsletterPopup.classList.add('show');
+                    newsletterOverlay.classList.add('show');
+                    // Reset click count when newsletter appears
+                    globalClickCount = 0;
+                }, 750);
+            });
+
+            // Handle newsletter form submission
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Congratulations! You are now subscribed to receive hourly egg tips! 🥚');
+                newsletterPopup.classList.remove('show');
+                newsletterOverlay.classList.remove('show');
+            });
+
+            // Make the decline button move away on hover
+            let declineAttempts = 0;
+            declineBtn.addEventListener('mouseover', (e) => {
+                if (declineAttempts < 2) {
+                    const newX = Math.random() * 300 - 150;
+                    const newY = Math.random() * 100 - 50;
+                    declineBtn.style.transform = `translate(${newX}px, ${newY}px)`;
+                    declineAttempts++;
+                } else {
+                    declineBtn.innerHTML = "Fine, keep living with mediocre eggs 😢";
+                    declineBtn.style.transform = "none";
+                }
+            });
+
+            // Track clicks anywhere on the document
+            document.addEventListener('click', (e) => {
+                // Only count clicks when newsletter popup is visible
+                if (newsletterPopup.classList.contains('show')) {
+                    globalClickCount++;
+
+                    // After 3 clicks, dismiss the popup with a frustrated message
+                    if (globalClickCount >= 1) {
+                        alert("Ugh, fine! But don't blame us when your eggs are sub-par! 😤");
+                        newsletterPopup.classList.remove('show');
+                        newsletterOverlay.classList.remove('show');
+                    }
+                }
+            });
+
+
+
+        });
+
+        function scrollToRecipe() {
+            // Scroll to recipe section - you'll need to add the correct ID
+            document.getElementById('recipe').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        function printRecipe() {
+            window.print();
+        }
+
+        function saveToPinterest() {
+            alert("YOUR EGGS HAVE BEEN PINNED! Join 147,283 other egg enthusiasts!");
+        }
+
+        function watchVideo() {
+            window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank');
+        }
+    </script>
+
+</body>
+
+</html>

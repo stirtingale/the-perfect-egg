@@ -880,18 +880,22 @@
 
         li>a,
         p>a {
+            /* Base styling */
             color: #0066cc;
             text-decoration: none;
-            padding: 0 2px;
+            padding: 2px 4px;
             border-bottom: 2px solid #0066cc;
             font-weight: 500;
             transition: all 0.2s ease-in-out;
-            display: inline-block;
-            line-height: 1.4;
+
+            /* Improve clickability */
+            display: inline;
+            line-height: 1.6;
             position: relative;
             z-index: 1;
         }
 
+        li>a:hover,
         p>a:hover {
             background-color: #0066cc15;
             border-bottom: 2px solid #003d7a;
@@ -899,21 +903,62 @@
             transform: translateY(-1px);
         }
 
+        li>a:active,
         p>a:active {
             transform: translateY(1px);
         }
 
+        li>a:focus,
         p>a:focus {
             outline: 2px solid #0066cc;
             outline-offset: 2px;
             border-radius: 2px;
         }
 
+        /* External link indicator */
+        li>a[href^="http"]:after,
         p>a[href^="http"]:after {
             content: " ↗";
             font-size: 0.8em;
             display: inline-block;
             margin-left: 2px;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+
+            li>a,
+            p>a {
+                padding: 2px 4px;
+                margin: 4px 0;
+                touch-action: manipulation;
+            }
+
+            /* Increased touch target */
+            li>a::before,
+            p>a::before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: -10px;
+                right: -10px;
+                bottom: -10px;
+                z-index: -1;
+            }
+
+            /* Ensure list items don't break layout */
+            li {
+                padding: 4px 0;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (forced-colors: active) {
+
+            li>a,
+            p>a {
+                border-bottom-width: 1px;
+            }
         }
 
         @keyframes shakeNo {
